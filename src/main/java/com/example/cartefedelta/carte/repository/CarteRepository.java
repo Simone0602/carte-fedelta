@@ -13,4 +13,7 @@ public interface CarteRepository extends JpaRepository<Carta, Long> {
     @Query(value = "SELECT num_carta FROM carta ORDER BY id DESC LIMIT 1", nativeQuery = true)
     public List<String> findLastNumCarta();
 
+    @Query(value = "SELECT * FROM carta WHERE stato = 0 ORDER BY random() LIMIT 1", nativeQuery = true)
+    public List<Carta> cartaAssociata();
+
 }
