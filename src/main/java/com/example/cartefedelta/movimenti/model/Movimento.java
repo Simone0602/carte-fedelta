@@ -2,6 +2,7 @@ package com.example.cartefedelta.movimenti.model;
 
 import jakarta.persistence.*;
 
+import java.time.LocalDateTime;
 import java.util.Date;
 
 @Entity
@@ -11,13 +12,13 @@ public class Movimento {
     @GeneratedValue(strategy= GenerationType.SEQUENCE, generator = "movimento_id_seq")
     @Column(name = "id", updatable = false)
     private Long id;
-    private Date dataora;
+    private LocalDateTime dataora;
     private int quantita;
     private double importo;
     private double totale;
     private int tipo;
 
-    public Movimento(Date dataora, int quantita, double importo, double totale, int tipo) {
+    public Movimento(LocalDateTime dataora, int quantita, double importo, double totale, int tipo) {
         this.dataora = dataora;
         this.quantita = quantita;
         this.importo = importo;
@@ -28,11 +29,11 @@ public class Movimento {
     public Movimento() {
     }
 
-    public Date getDataora() {
+    public LocalDateTime getDataora() {
         return dataora;
     }
 
-    public void setDataora(Date dataora) {
+    public void setDataora(LocalDateTime dataora) {
         this.dataora = dataora;
     }
 

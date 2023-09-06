@@ -86,4 +86,18 @@ public class Carta {
     public void setPunti(Long punti) {
         this.punti = punti;
     }
+
+    @Override
+    public String toString() {
+        return "Carta{" +
+                "id=" + id +
+                ", num_carta='" + num_carta + '\'' +
+                ", data_creazione=" + data_creazione +
+                ", data_validazione=" + data_validazione +
+                ", data_scadenza=" + data_scadenza +
+                ", stato=" + stato +
+                ", punti=" + punti +
+                ", cliente=" + cliente +
+                '}';
+    }
 }
